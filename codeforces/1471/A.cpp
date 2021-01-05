@@ -38,9 +38,6 @@ int main(){
             minm=minm+a;
             maxm=ceil(a*1.0/x)+maxm;
         }
-        minm=ceil(minm*1.0/x);
-        printl(minm);
-        printl(maxm);
-        cout<<endl;
+        cout<<(ll)ceil(minm*1.0/x)<<" "<<maxm<<endl;
     }
 }
