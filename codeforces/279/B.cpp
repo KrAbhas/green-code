@@ -53,9 +53,7 @@ void solve(){
 			k++;
 		}
 		self_max(mx,k-i);
-		if(k==n){
-			break;
-		}
+		//deb(mx);
 	}
 	printi(mx);
 }
