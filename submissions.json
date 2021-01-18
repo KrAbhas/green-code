@@ -1,4 +1,23 @@
 {
+  "CF104688985": {
+    "contest_id": 279,
+    "language": "GNU C++17",
+    "path": "codeforces\\279\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Books",
+    "problem_url": "https://codeforces.com/contest/279/problem/B",
+    "submission_id": "CF104688985",
+    "submission_url": "https://codeforces.com/contest/279/submission/104688985",
+    "tags": [
+      "binary search",
+      "brute force",
+      "implementation",
+      "two pointers",
+      "*1400"
+    ],
+    "timestamp": "Jan/18/2021 19:03"
+  },
   "CF104710085": {
     "contest_id": 580,
     "language": "GNU C++17",
