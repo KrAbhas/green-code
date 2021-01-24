@@ -34,13 +34,11 @@ void self_min(ll &a, ll b){
 }
 
 void solve(){
-	string s;
 	for (int i = 0; i < 9; ++i) {
+		string s;
 		cin >> s;
-		for(int j=0;j<9;++j){
-			if(s[j]=='8') s[j]='7';
-		}
-		cout<<s<<'\n';
+		for (auto &c : s) if (c == '8') c = '7';
+		cout << s << endl;
 	}
 }
 
