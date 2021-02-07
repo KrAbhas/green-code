@@ -24,7 +24,7 @@ void write(T&&... arg){ //rvalue reference (new to cpp)
 	((cout<<arg<<" "),...);
 	//cout<<endl;
 }
- 
+
 /*
 int iscomposite[Max1];
 void sieve(){
@@ -38,21 +38,21 @@ void sieve(){
 		}
 	}
 }
- 
+
 */
- 
+
 ll nc2(ll n){
 	return n*(n-1)/2;
 }
- 
+
 void self_max(ll &a, ll b){
 	a=max(a,b);
 }
- 
+
 void self_min(ll &a, ll b){
 	a=min(a,b);
 }
- 
+
 void solve(){
 	ll hlife, hpow, n;
 	cin>>hpow>>hlife>>n;
@@ -89,12 +89,12 @@ void solve(){
 		}
 	}
 	//deb(sum);
-	if(sum<hlife){
+	if(sum<=hlife){
 		cout<<"YES\n";
 	}
 	else cout<<"NO\n";
 }
- 
+
 void solve_t(){
 	int t;
 	cin>>t;
@@ -102,7 +102,7 @@ void solve_t(){
 		solve();
 	}
 }
- 
+
 int main(){
 	solve_t();
 }
