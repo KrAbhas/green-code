@@ -95,7 +95,7 @@ void solve_t(){
 		makable[0]=1;
 		for(int i=0;i<100;++i){
 			int d0=i%10, d1=i/10;
-			if(d0==d || d1==d || makable[i]){//check if the number is lucky
+			if(d0==d || d1==d){//check if the number is lucky
 				for(int j=0;j+i<maxm;++j){
 					//if j is lucky, then j+i is also lucky
 					makable[j+i]=makable[i+j] || makable[j];
@@ -103,7 +103,7 @@ void solve_t(){
 			}
 		}
 	}
-	
+
 	while(t--){
 		int n, luck;
 		cin>>n>>luck;
