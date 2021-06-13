@@ -6,30 +6,48 @@ void solve(){
 	cin>>n;
 	string s;
 	cin>>s;
+	//cout<<s.length();
 	int k=0;
-	string st;
-	vector<string> strings={""};
+	int l=0;
+	string str="a";
+	char ch='a';
 	while(k==0){
-		vector<string> nstrings;
-		for(auto &str: strings){
-			for(int i=0;i<26;i++){
-				string nstr=str+char('a'+i);
-				nstrings.push_back(nstr);
-				//cout<<nstr<<" ";
-				if(s.find(nstr)==string::npos){
-					//cout<<nstr<<" ";
-					k=1;
-					st=nstr;
+		int p=l;
+		int skip=1;
+		while(true){
+			if(skip==0){
+				int r=l;
+				while(r>=0 && str[r]=='z'){
+					str[r]='a';
+					r--;
+				}
+				if(r==-1)
+					break;
+				str[r]++;
+			}
+			else
+				skip=0;
+			int t=0;
+			for(int i=0;i<s.length()-l;i++){
+				if(str.compare(s.substr(i,l+1))==0){
+					t=1;
 					break;
 				}
 			}
-			if(k==1){
+			if(t!=1){
+				k=1;
 				break;
 			}
 		}
-		strings.swap(nstrings);
+		if(k==1)
+			break;
+		for(int j=0;j<=l;j++){
+			str[j]='a';
+		}
+		str='a'+str;
+		l++;
 	}
-	cout<<st<<endl;
+	cout<<str<<endl;
 }
  
 void solve_t(){
@@ -46,7 +64,6 @@ void solve_t(){
  
 
 int main(){
-
-	solve_t();
 	
+	solve_t();
 }
