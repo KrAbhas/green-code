@@ -20,10 +20,6 @@ int main(){
 			cout<<"Yes\n";
 			continue;
 		}
-		if(n%b==1){
-			cout<<"Yes\n";
-			continue;
-		}
 		if(a==1){
 			if(n%b==1)
 				cout<<"Yes\n";
@@ -31,7 +27,7 @@ int main(){
 			continue;
 		}
 
-		for(long long i=a;n-i>=0;i*=a){
+		for(long long i=1;n-i>=0;i*=a){
 			//cout<<i<<" ";
 			if((n-i)%q==0){
 				cout<<"Yes\n";
