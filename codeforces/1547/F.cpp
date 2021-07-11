@@ -3,6 +3,8 @@ using namespace std;
 #define ll long long
 
 int n;
+int arr[200001];
+
 struct segtree{
 	int size;
 	vector<int> gcd;
@@ -80,11 +82,9 @@ bool good(int x, segtree& st, vector<int>& vec){
 }
 
 int main(){
+	
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	cout.tie(NULL);
-	
-	
 	int tt;
 	cin>>tt;
 	while(tt--){
