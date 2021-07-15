@@ -3,23 +3,14 @@ using namespace std;
 
 #define ll long long
 
-const int maxn = 100001;
-const ll mod = 998244353;
-
-ll fact[maxn];
-ll inv[maxn];
-
-ll power(ll a, ll m){
-	ll res=1;
-	while(m>0){
-		if(m & 1)
-			res = (res * a) % mod;
-		a = (a * a) % mod;
-		m = m >> 1;
-	}
-	return res;
+const int MAXN = 100010;
+const int MOD = 998244353;
+char str[MAXN];
+long long F[MAXN], rF[MAXN];
+long long inv(long long a, long long m) {
+	if (a == 1) return 1;
+	return inv(m%a, m) * (m - m/a) % m;
 }
-
 
 void comp(){
 	int n;
@@ -49,21 +40,21 @@ void comp(){
 		//cout<<(a+b+c)<<" ";
 	}
 	b=0;
-	ll ans = ((fact[a + c] * inv[a])% mod * inv[c]) %mod;
+	ll ans = F[a + c] * rF[a] % MOD * rF[c] % MOD;
 	printf("%d\n", (int) ans);
 }
 
 
 int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-	fact[0] = 1;
-	inv[0] = 1;
-
-	for(int i=1;i<maxn;i++){
-		fact[i]=i;
-		fact[i] = (fact[i] * fact[i-1])%mod;
-		inv[i] = power(fact[i], mod-2);
-		//cout<<inv[i]<<endl;
+	int T;
+	int n;
+	F[0] = rF[0] = 1;
+	for (int i = 1; i < MAXN; i++) {
+		F[i] = F[i-1] * i % MOD;
+		rF[i] = rF[i-1] * inv(i, MOD) % MOD;
 	}
 	int tt;
 	cin>> tt;

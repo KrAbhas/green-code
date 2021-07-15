@@ -1,4 +1,21 @@
 {
+  "CF122609846": {
+    "contest_id": 1545,
+    "language": "GNU C++17",
+    "path": "codeforces\\1545\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "AquaMoon and Chess",
+    "problem_url": "https://codeforces.com/contest/1545/problem/B",
+    "submission_id": "CF122609846",
+    "submission_url": "https://codeforces.com/contest/1545/submission/122609846",
+    "tags": [
+      "combinatorics",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Jul/15/2021 23:24"
+  },
   "CF122665722": {
     "contest_id": 1545,
     "language": "GNU C++17",
