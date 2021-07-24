@@ -4,71 +4,81 @@ using namespace std;
 #define ll long long
 
 int main(){
+
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	int tt;
-	cin >> tt;
-	while (tt--) {
-		int n, k;
-		cin >> n >> k;
-		vector<int> seq(n);
-		int x;
-		vector<int> freq(n+1, 0);
-		for (int i = 0; i < n; i++) {
-			cin >> seq[i];
-			freq[seq[i]]++;
+	cin>>tt;
+	while(tt--){
+		int n, m;
+		cin >> n >> m;
+		int s[n];
+		map<int,int>arr;
+		//memset(arr, 0, sizeof(arr));
+		for (int i = 0; i < n; i++){
+			cin >> s[i];
+			arr[s[i]] += 1;
 		}
 		
-		vector<vector<int>> col(n + 1);
-		for (int i = 0; i <= n; i++) {
-			if (freq[i] >= k) {
-				for (int j = 1; j <= k; j++) {
-					col[i].push_back(j);
-				}
+		int c = 0;
+		map<int,vector<int>> dist;
+		for (auto i = arr.begin(); i != arr.end(); i++){
+			if (i->second <= m){
+				c += i->second;
+				dist[i->second].push_back(i->first);
+			}
+			else{
+				dist[m].push_back(i->first);
+				c += m;
 			}
 		}
-
+		//cout<<c<<endl;
+		int k = c / m;
+		int t = 1;
 		int r = 0;
-		for (int i = 0; i < n + 1; i++) {
-			if (freq[i] > 0 && freq[i] < k) {
-				for (int j = 0; j < freq[i]; j++) {
-					if (r > k) {
-						r = r % k;
-					}
-					if (r == 0) {
-						r = k;
-					}
-					col[i].push_back(r);
+		int p = 0;
+		arr.clear();
+		map<int,pair<int,int>> vec;
+		map<int,vector<int>>:: reverse_iterator it;
+		for (it = dist.rbegin(); it != dist.rend(); it++) {
+			while(!it->second.empty()){
+				int j = (it->second).back();
+				//cout<<j<<"- ";
+				(it->second).pop_back();
+				vec[j].first = t;
+				t = (t + it->first - 1) % m;
+				if(t == 0)
+					t = m;
+				if (t - it->first + 1 <= 1)
 					r++;
-				}
-			}
-		}
-		if (r > k) {
-			r = r % k;
-		}
-		if (r == 0) {
-			r = k;
-		}
-		//cout << r<<":\n";
-		if(r != k){
-			for (int i = n; i >= 0; i--) {
-				if(r == 0)
+				if(r > k){
+					if (vec[j].first != 1)
+						vec[j].second = m;
+					else vec[j].second = 0;
+					p = 1;
 					break;
-				if (freq[i] > 0 && freq[i] < k) {
-					for (int j = 0; j < freq[i]; j++) {
-						if (r == 0)
-							break;
-						col[i].pop_back();
-						r--;
-					}
 				}
+				vec[j].second = t;
+				t++;
+				t = t % m;
+				if(t == 0)
+					t = m;
+				//cout<<j<<" * "<<vec[j].first<<" "<<vec[j].second<<endl;
 			}
+			if(p == 1)
+				break;
 		}
 
-		for (int i = 0; i < n; i++) {
-			if (!col[seq[i]].empty()){
-				cout << col[seq[i]].back() << " ";
-				col[seq[i]].pop_back();
+		for(int i = 0; i < n; i++){
+			if (vec[s[i]].second != 0) {
+				cout << vec[s[i]].second << " ";
+				if(vec[s[i]].second == vec[s[i]].first) {
+					vec[s[i]].second = 0;
+					continue;
+				}
+				vec[s[i]].second--;
+				if(vec[s[i]].second == 0)
+					vec[s[i]].second = m;
 			}
 			else cout << "0 ";
 		}
