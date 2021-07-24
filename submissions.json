@@ -1879,6 +1879,24 @@
     ],
     "timestamp": "Jul/19/2021 12:56"
   },
+  "CF123591796": {
+    "contest_id": 1553,
+    "language": "GNU C++17",
+    "path": "codeforces\\1553\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Penalty",
+    "problem_url": "https://codeforces.com/contest/1553/problem/C",
+    "submission_id": "CF123591796",
+    "submission_url": "https://codeforces.com/contest/1553/submission/123591796",
+    "tags": [
+      "brute force",
+      "dp",
+      "greedy",
+      "*1200"
+    ],
+    "timestamp": "Jul/24/2021 15:00"
+  },
   "CF123623234": {
     "contest_id": 1553,
     "language": "GNU C++17",
