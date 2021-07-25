@@ -1879,6 +1879,24 @@
     ],
     "timestamp": "Jul/19/2021 12:56"
   },
+  "CF123699654": {
+    "contest_id": 1551,
+    "language": "GNU C++17",
+    "path": "codeforces\\1551\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Interesting Story",
+    "problem_url": "https://codeforces.com/contest/1551/problem/C",
+    "submission_id": "CF123699654",
+    "submission_url": "https://codeforces.com/contest/1551/submission/123699654",
+    "tags": [
+      "greedy",
+      "sortings",
+      "strings",
+      "*1500"
+    ],
+    "timestamp": "Jul/25/2021 17:17"
+  },
   "CF123724973": {
     "contest_id": 1551,
     "language": "GNU C++17",
