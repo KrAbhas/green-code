@@ -2025,6 +2025,25 @@
     ],
     "timestamp": "Jul/25/2021 20:23"
   },
+  "CF123968461": {
+    "contest_id": 1552,
+    "language": "GNU C++17",
+    "path": "codeforces\\1552\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Running for Gold",
+    "problem_url": "https://codeforces.com/contest/1552/problem/B",
+    "submission_id": "CF123968461",
+    "submission_url": "https://codeforces.com/contest/1552/submission/123968461",
+    "tags": [
+      "combinatorics",
+      "graphs",
+      "greedy",
+      "sortings",
+      "*1500"
+    ],
+    "timestamp": "Jul/28/2021 00:42"
+  },
   "CF124059912": {
     "contest_id": 1552,
     "language": "GNU C++17",
