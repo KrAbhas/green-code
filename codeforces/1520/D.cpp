@@ -53,15 +53,18 @@ int main() {
 		memset(dp, 0, sizeof(dp));
 		if (k < 0)
 			for (ll i = 0; i < n; i++) {
-				ans += dp[(abs(k) + arr[i])]++;
+				dp[(abs(k) + arr[i])]++;
 				//cout << k + arr[i];
 			}
 		else 
 			for (ll i = 0; i < n; i++) {
-				ans += dp[arr[i]]++;
+				dp[arr[i]]++;
 			}
 		
 
+		for (ll i = 0; i < p + 1; i++) {
+			ans += (dp[i] - 1) * dp[i] / 2;
+		}
 		cout << ans;
 		cout << "\n";
 	}
