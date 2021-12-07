@@ -2536,6 +2536,26 @@
     ],
     "timestamp": "Dec/05/2021 20:42"
   },
+  "CF138304995": {
+    "contest_id": 1534,
+    "language": "GNU C++17",
+    "path": "codeforces\\1534\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Little Alawn's Puzzle",
+    "problem_url": "https://codeforces.com/contest/1534/problem/C",
+    "submission_id": "CF138304995",
+    "submission_url": "https://codeforces.com/contest/1534/submission/138304995",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "dsu",
+      "graphs",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "Dec/07/2021 07:13"
+  },
   "CF138306998": {
     "contest_id": 1538,
     "language": "GNU C++17",
