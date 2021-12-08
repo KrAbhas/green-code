@@ -91,7 +91,6 @@ int main() {
 					v.push_back(arr[i][q]);
 					v.push_back(arr[p][q]);
 					sort (v.begin(), v.end());
-					int med = (v[2] + v[1]) / 2;
 					res += abs(arr[i][j] - v[2]) + abs(arr[i][q] - v[2]) + abs(arr[p][j] - v[2]) + abs(arr[p][q] - v[2]);
 				}
 			}
