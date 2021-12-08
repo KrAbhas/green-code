@@ -91,7 +91,7 @@ int main() {
 					v.push_back(arr[i][q]);
 					v.push_back(arr[p][q]);
 					sort (v.begin(), v.end());
-					res += abs(arr[i][j] - v[2]) + abs(arr[i][q] - v[2]) + abs(arr[p][j] - v[2]) + abs(arr[p][q] - v[2]);
+					res += abs(arr[i][j] - v[1]) + abs(arr[i][q] - v[1]) + abs(arr[p][j] - v[1]) + abs(arr[p][q] - v[1]);
 				}
 			}
 		}
