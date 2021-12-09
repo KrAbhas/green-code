@@ -70,14 +70,21 @@ int main() {
 		cin >> n >> q;
 		ll ans = 0;
 		ll arr[n + 1];
-		fo(i, 0, n) cin >> arr[i];
-		arr[n] = 0;
+		ll res[n + 2];
+		fo (i, 0, n) cin >> arr[i];
+		res[ans++] = 0;
+		fo (i, 0, n - 1) {
+			if (sgn (res[ans - 1], arr[i]) * sgn (arr[i], arr[i + 1]) == -1)
+				res[ans++] = arr[i];
+		}
+		if (ans % 2 == 1) {
+			res[ans++] = arr[n - 1];
+		}
+		bool p = true;
 		ll s = 0;
-		fo (i, 1, n + 1) {
-			if (arr[i] <= arr[i - 1]){
-				//cout << arr[i - 1] << arr[i] << endl;
-				s += (arr[i - 1] - arr[i]);
-			}
+		fo (i, 1, ans) {
+			s += (p == true ? res[i] : (-1 * res[i]));
+			p = true ^ p;
 		}
 		cout << s << endl;
 	}
