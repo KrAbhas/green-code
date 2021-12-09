@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
+
 #define ll long long
 #define fact(a,b) factorial (a, b)
 #define fo(i, a, n) for (ll i = a; i < n; i++)
 #define fob(i, a, n) for (ll i = a; i >= n; i--)
- 
+
 //_____________________________________________________________________________DSU
 class dsu {
 public:
@@ -15,11 +15,11 @@ public:
 		p.resize(n);
 		iota(p.begin(), p.end(), 0);
 	}
- 
+
 	inline ll get(ll x) {
 		return (x == p[x] ? x : (p[x] = get(p[x])));
 	}
- 
+
 	inline bool unite(ll x, ll y) {
 		x = get(x);
 		y = get(y);
@@ -38,7 +38,7 @@ ll factorial (ll k, ll s) {
 	}
 	return f;
 }
- 
+
 ll ncr(ll n, ll r) {
 	ll rd = n - r;
 	ll m = min(r, rd);
@@ -47,19 +47,19 @@ ll ncr(ll n, ll r) {
 	ll ans = nf * 1.0 / rf;
 	return ans;
 }
- 
+
 ll sgn(ll &a, ll &b) {
 	if (b - a > 0) return 1;
 	if (b - a < 0) return -1;
 	return 0;
 }
- 
+
 bool my_cmp(const pair<ll,ll> &a, const pair<ll,ll> &b) {
 	return a.second < b.second;
 }
- 
+
 //***************************************************************************implement
- 
+
 int main() {
 	ios::sync_with_stdio(false);
   	cin.tie(0);
@@ -68,37 +68,39 @@ int main() {
 	while(tt--) {
 		ll n, q;
 		cin >> n >> q;
-		pair<ll,ll> arr[n];
+		vector<pair<ll,ll>> arr(n);
 		fo (i, 0, n) {
 			cin >> arr[i].first;
 			arr[i].second = (i + 1);
 		}
 		ll s = 0;
-		sort(arr, arr + n);
+		sort(arr.begin(), arr.end());
 		ll k = 0;
-		ll l = 0;
 		bool ok = false;
-		vector<ll>v;
-		fob (i, n - 1, 0) {
-			if (!ok) {
-				k = i;
-			}
+		fo (i, 0, n) {
 			if(s + arr[i].first <= q){
-				l = i;
+				k = i;	
 				s += arr[i].first;
-				v.push_back(arr[i].second);
-				ok = true;
 			}
 		}
-		if (s * 2 >= q && s<=q) {
-			cout << v.size() << "\n";
-			fo (i, 0, v.size()) {
-				cout << v[i] << " ";
+		k++;
+		if (s * 2 >= q) {
+			cout << k << endl;
+			fo (i, 0, k) {
+				cout << arr[i].second << " ";
 			}
 			cout << endl;
 		}
 		else {
-			cout << "-1\n";
+			fo (i, 0, n) {
+				if (arr[i].first * 2 >= q && arr[i].first <= q) {
+					cout << "1\n" << arr[i].second << endl;
+					ok = true;
+					break;
+				}
+			}
+			if (!ok)
+				cout << "-1\n";
 		}
 	}
 } 
