@@ -2969,6 +2969,23 @@
     ],
     "timestamp": "Dec/11/2021 08:02"
   },
+  "CF138695676": {
+    "contest_id": 1612,
+    "language": "GNU C++17",
+    "path": "codeforces\\1612\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "X-Magic Pair",
+    "problem_url": "https://codeforces.com/contest/1612/problem/D",
+    "submission_id": "CF138695676",
+    "submission_url": "https://codeforces.com/contest/1612/submission/138695676",
+    "tags": [
+      "math",
+      "number theory",
+      "*1600"
+    ],
+    "timestamp": "Dec/11/2021 09:37"
+  },
   "CF138717906": {
     "contest_id": 1418,
     "language": "GNU C++17",
