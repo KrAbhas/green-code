@@ -77,18 +77,17 @@ int main() {
 		int k = 0;
 		sort(arr, arr + n, greater<pair<int,ll>>());
 		for (int i = 0; i < n; i++) {
-			//cout << arr[i].first << " ";
 			if (i != 0)
 				arr[i].second = arr[i].second + arr[i - 1].second;
 		}
-		for (int i = 0; i < n; i++, k++) {
-			if (arr[i].second >= arr[i].first) {
+		for (int i = 0; i < n; i++) {
+			k = i;
+			if (arr[i].second > arr[i].first) {
 				break;
 			}
 		}
-		if (k != 0 && k != n)
+		if (k != 0)
 			cout << min(max((ll)arr[k].first, arr[k - 1].second), arr[n - 1].second) << endl;
-		else if (k == n) cout << min((ll)arr[k - 1].first, arr[k - 1].second) << endl;
 		else cout << min((ll)arr[k].first, arr[k].second) << endl;
 	} 
 } 
