@@ -96,14 +96,12 @@ int main() {
 			vec.push_back({m, k});
 		}
 		sort(vec.begin(), vec.end());
-		ll res = vec[0].first;
-		ll total = 0;
+		ll m = 0;
+		ll s = 0;
 		for (int i = 0; i < vec.size(); i++) {
-			if (res + total < vec[i].first) {
-				res = vec[i].first - total;
-			}
-			total += vec[i].second;
+			m = max(m, vec[i].first - s);
+			s += vec[i].second;
 		}
-		cout << (res + 1) << endl;
+		cout << (m + 1) << endl;
 	}
 } 

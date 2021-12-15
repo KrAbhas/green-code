@@ -2969,6 +2969,24 @@
     ],
     "timestamp": "Dec/11/2021 08:02"
   },
+  "CF139432560": {
+    "contest_id": 1561,
+    "language": "GNU C++17",
+    "path": "codeforces\\1561\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Deep Down Below",
+    "problem_url": "https://codeforces.com/contest/1561/problem/C",
+    "submission_id": "CF139432560",
+    "submission_url": "https://codeforces.com/contest/1561/submission/139432560",
+    "tags": [
+      "binary search",
+      "greedy",
+      "sortings",
+      "*1300"
+    ],
+    "timestamp": "Dec/16/2021 02:11"
+  },
   "CF139432647": {
     "contest_id": 1561,
     "language": "GNU C++17",
