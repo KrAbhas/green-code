@@ -87,9 +87,9 @@ int main() {
 		int k = (a + b) / 2;
 		int ta, tb;
 		set<int> v;
-		for (int i = 0; i <= k; i++) {
-			ta = a - (k) + i;
-			if (ta >= 0 && ta <= a + b - k) {
+		for (int i = 0; i <= a + b - k; i++) {
+			ta = a - (a + b - k) + i;
+			if (ta >= 0 && ta <= k) {
 				v.insert(i + ta);
 			} 
 		}
