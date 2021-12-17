@@ -2969,6 +2969,23 @@
     ],
     "timestamp": "Dec/11/2021 08:02"
   },
+  "CF139650650": {
+    "contest_id": 1558,
+    "language": "GNU C++17",
+    "path": "codeforces\\1558\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Charmed by the Game",
+    "problem_url": "https://codeforces.com/contest/1558/problem/A",
+    "submission_id": "CF139650650",
+    "submission_url": "https://codeforces.com/contest/1558/submission/139650650",
+    "tags": [
+      "brute force",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "Dec/17/2021 20:35"
+  },
   "CF139737563": {
     "contest_id": 1556,
     "language": "GNU C++17",
