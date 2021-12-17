@@ -2969,6 +2969,22 @@
     ],
     "timestamp": "Dec/11/2021 08:02"
   },
+  "CF139622442": {
+    "contest_id": 1311,
+    "language": "GNU C++17",
+    "path": "codeforces\\1311\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Perform the Combo",
+    "problem_url": "https://codeforces.com/contest/1311/problem/C",
+    "submission_id": "CF139622442",
+    "submission_url": "https://codeforces.com/contest/1311/submission/139622442",
+    "tags": [
+      "brute force",
+      "*1300"
+    ],
+    "timestamp": "Dec/17/2021 15:30"
+  },
   "CF139625663": {
     "contest_id": 1237,
     "language": "GNU C++17",
