@@ -2969,6 +2969,22 @@
     ],
     "timestamp": "Dec/11/2021 08:02"
   },
+  "CF139737563": {
+    "contest_id": 1556,
+    "language": "GNU C++17",
+    "path": "codeforces\\1556\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Take Your Places!",
+    "problem_url": "https://codeforces.com/contest/1556/problem/B",
+    "submission_id": "CF139737563",
+    "submission_url": "https://codeforces.com/contest/1556/submission/139737563",
+    "tags": [
+      "implementation",
+      "*1300"
+    ],
+    "timestamp": "Dec/18/2021 17:43"
+  },
   "CF139745940": {
     "contest_id": 1493,
     "language": "GNU C++17",
