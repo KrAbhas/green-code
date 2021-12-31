@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//think if using inf, it may cause overflow or underflow
-
 #define ll long long
 #define intl int64_t
 
@@ -11,28 +9,48 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	ll tt;
-	intl inf = 3 * (1e5 + 1);
+	int inf = (1e5 + 1);
 	ll n;
 	cin >> n;
-	intl c = 0; string s;
-	intl arr[3] = {2, 1, 0};
-	vector<vector<intl>> dp(8, vector<intl> (n + 1, inf));
-	for (intl i = 0; i < n; i++) {
-		cin >> c >> s;
-		intl m = 0;
-		for (char ch: s) {
-			m = m | (1 << arr[ch - 'A']);
-		} 
-		dp[m][i + 1] = min(dp[m][i], c);
-		for (intl j = 0; j < 8; j++) {
-			dp[j][i + 1] = min(dp[j][i + 1], dp[j][i]);
-			dp[(m | j)][i + 1] = min(c + dp[j][i], dp[(m | j)][i + 1]);
+	int c;
+	string str;
+	int k = 3 * inf;
+	int p = 0;
+	int arr[3];
+	for (int i = 0; i < 3; i++) {
+		arr[i] = 3 * inf;
+	}
+	vector<pair<int,string>> vec;
+	for (int i = 0; i < n; i++) {
+		cin >> c >> str;
+		if (str.length() == 1) {
+			arr[str[0] - 'A'] = min(arr[str[0] - 'A'], c);
+		}
+		if (str.length() == 3) {
+			k = min(k, c);
+			continue;
+		}
+		vec.push_back({c, str});
+	}
+	int t = vec.size();
+	k = min(k, (arr[0] + arr[1] + arr[2]));
+	for (int i = 0; i < t; i++) {
+		for (int j = 0; j < t; j++) {
+			set<char> s;
+			for (char ch : vec[i].second) {
+				s.insert(ch);
+			}
+			for (char ch: vec[j].second) {
+				s.insert(ch);
+			}
+			if (s.size() == 3) {
+				k = min(k, vec[i].first + vec[j].first);
+			}
 		}
 	}
-	
-	intl res = dp[7][n];
-	if (res >= inf)
+	if (k == 3 * inf) {
 		cout << -1 << endl;
-	else 
-		cout << res << endl;
+	}
+	else
+		cout << k << endl;
 }
