@@ -1,42 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+#define ll long long
+#define all(x) (x).begin(), (x).end()
+#define intl int64_t
+
 int main(){
-
-
-	
-
+	const ll inf = 1e9;
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-
-	long long tt;
-	cin>>tt;
-	while(tt--){
-		long long n,a,b;
-		cin>>n>>a>>b;
-		long long p=a;
-		long long q=b;
-		long long k=0;
-		if(b==1){
-			cout<<"Yes\n";
+	ll tt;
+	cin >> tt;
+	while (tt--) {
+		ll n, a, b;
+		cin >> n >> a >> b;
+		if (b == 1){
+			cout << "Yes\n";
 			continue;
 		}
-		if(a==1){
-			if(n%b==1)
-				cout<<"Yes\n";
-			else cout<<"No\n";
-			continue;
-		}
-
-		for(long long i=1;n-i>=0;i*=a){
-			//cout<<i<<" ";
-			if((n-i)%q==0){
-				cout<<"Yes\n";
-				b=-1;
-				break;
+		bool ok = false;
+		ll p = 1;
+		if (n % b == a)
+			ok = true;
+		if (a != 1)
+			for (int i = 0; p <= n; i++) {
+				if (p % b == n % b) {
+					ok = true;
+					break;
+				}
+				p *= a;
 			}
-			k=i;
-		}
-		if(b!=-1)
-			cout<<"No\n";
+		if (ok)
+			cout << "Yes\n";
+		else cout << "No\n";
 	}
 }
