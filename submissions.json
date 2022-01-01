@@ -3820,6 +3820,24 @@
     ],
     "timestamp": "Jan/01/2022 15:37"
   },
+  "CF141355078": {
+    "contest_id": 534,
+    "language": "GNU C++17",
+    "path": "codeforces\\534\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Covered Path",
+    "problem_url": "https://codeforces.com/contest/534/problem/B",
+    "submission_id": "CF141355078",
+    "submission_url": "https://codeforces.com/contest/534/submission/141355078",
+    "tags": [
+      "dp",
+      "greedy",
+      "math",
+      "*1400"
+    ],
+    "timestamp": "Jan/02/2022 05:16"
+  },
   "CF141397070": {
     "contest_id": 987,
     "language": "GNU C++17",
