@@ -11,7 +11,7 @@ int main(){
 	cin.tie(NULL);
 	ll n, k;
 	cin >> n >> k;
-	ll dp[k + 1][n + 1];
+	int dp[k + 1][n + 1];
 	memset(dp, 0, sizeof(dp));
 	dp[0][1] = 1;
 	for (int i = 0; i < k; i++) {
