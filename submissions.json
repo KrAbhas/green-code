@@ -3820,6 +3820,24 @@
     ],
     "timestamp": "Jan/01/2022 15:37"
   },
+  "CF141587804": {
+    "contest_id": 94,
+    "language": "GNU C++17",
+    "path": "codeforces\\94\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Friends",
+    "problem_url": "https://codeforces.com/contest/94/problem/B",
+    "submission_id": "CF141587804",
+    "submission_url": "https://codeforces.com/contest/94/submission/141587804",
+    "tags": [
+      "graphs",
+      "implementation",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "Jan/04/2022 02:43"
+  },
   "CF141589142": {
     "contest_id": 486,
     "language": "GNU C++17",
