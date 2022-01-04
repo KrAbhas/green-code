@@ -13,9 +13,10 @@ A repository to keep track of problem solving practice, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
-210 | [C - Number of Ways](https://codeforces.com/contest/466/problem/C) | [GNU C++17](./codeforces/466/C.cpp) | `binary search` `brute force` `data structures` `dp` `two pointers` `*1700` | Jan/05/2022 16:56 | 
-209 | [D - Walking Between Houses](https://codeforces.com/contest/1015/problem/D) | [GNU C++17](./codeforces/1015/D.cpp) | `constructive algorithms` `greedy` `*1600` | Jan/05/2022 03:12 | 
-208 | [A - Grid game](https://codeforces.com/contest/1103/problem/A) | [GNU C++17](./codeforces/1103/A.cpp) | `constructive algorithms` `implementation` `*1400` | Jan/05/2022 01:55 | 
+211 | [C - Number of Ways](https://codeforces.com/contest/466/problem/C) | [GNU C++17](./codeforces/466/C.cpp) | `binary search` `brute force` `data structures` `dp` `two pointers` `*1700` | Jan/05/2022 16:56 | 
+210 | [D - Walking Between Houses](https://codeforces.com/contest/1015/problem/D) | [GNU C++17](./codeforces/1015/D.cpp) | `constructive algorithms` `greedy` `*1600` | Jan/05/2022 03:12 | 
+209 | [A - Grid game](https://codeforces.com/contest/1103/problem/A) | [GNU C++17](./codeforces/1103/A.cpp) | `constructive algorithms` `implementation` `*1400` | Jan/05/2022 01:55 | 
+208 | [B - Unnatural Conditions](https://codeforces.com/contest/1028/problem/B) | [GNU C++17](./codeforces/1028/B.cpp) | `constructive algorithms` `math` `*1200` | Jan/05/2022 01:23 | 
 207 | [B - 3-palindrome](https://codeforces.com/contest/805/problem/B) | [GNU C++17](./codeforces/805/B.cpp) | `constructive algorithms` `*1000` | Jan/04/2022 23:59 | 
 206 | [B - Combination](https://codeforces.com/contest/155/problem/B) | [GNU C++17](./codeforces/155/B.cpp) | `greedy` `sortings` `*1100` | Jan/04/2022 23:17 | 
 205 | [B - Vasya and Wrestling](https://codeforces.com/contest/493/problem/B) | [GNU C++17](./codeforces/493/B.cpp) | `implementation` `*1400` | Jan/04/2022 23:00 | 
