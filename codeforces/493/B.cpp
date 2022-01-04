@@ -36,7 +36,6 @@ int main(){
 		cout << "second\n";
 		return 0;
 	}
-
 	int a = p.size();
 	int b = m.size();
 	for (int i = 0; i < min(a, b); i++) {
@@ -49,18 +48,11 @@ int main(){
 			return 0;
 		}
 	}
-	if (a > b) {
+	
+	if (x > 0) {
 		cout << "first\n";
 	}
-	else if (b > a) {
-		cout << "second\n";
-	}
 	else {
-		if (x > 0) {
-			cout << "first\n";
-		}
-		else {
-			cout << "second\n";
-		}
+		cout << "second\n";
 	}
 }
