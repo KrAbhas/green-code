@@ -3819,5 +3819,21 @@
       "*1200"
     ],
     "timestamp": "Jan/01/2022 15:37"
+  },
+  "CF141673811": {
+    "contest_id": 805,
+    "language": "GNU C++17",
+    "path": "codeforces\\805\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "3-palindrome",
+    "problem_url": "https://codeforces.com/contest/805/problem/B",
+    "submission_id": "CF141673811",
+    "submission_url": "https://codeforces.com/contest/805/submission/141673811",
+    "tags": [
+      "constructive algorithms",
+      "*1000"
+    ],
+    "timestamp": "Jan/04/2022 23:59"
   }
 }
