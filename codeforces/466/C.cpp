@@ -17,34 +17,31 @@ int main(){
 	for (ll i = 0; i < n; i++) {
 		cin >> a[i];
 		s += a[i];
+		if (i > 0)
+			a[i] = a[i] + a[i - 1];
 	}
 	if (s % 3 != 0){
 		cout << 0 << endl;
 		return 0;
 	}
 	s = s / 3;
-	vector<int> b(n, 0);
-	vector<int> c(n, 0);
-	ll t = 0;
-	for (int i = 0; i < n - 1; i++) {
-		t += a[i];
-		if (t == s) {
-			b[i + 1] = 1;
+	vector<ll> dp[3];
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < n + 1; j++) {
+			if (i == 0) {
+				dp[i].pb(1);
+			}
+			else dp[i].pb(0);
 		}
 	}
-	t = 0;
-	for (int i = n - 1; i > 0; i--) {
-		t += a[i];
-		if (i != n - 1) 
-			c[i] = c[i] + c[i + 1];
-		if (t == s) 
-			c[i - 1] += 1;
-	}
-	ll ans = 0;
-	for (int i = 0; i < n - 1; i++) {
-		if (b[i] == 1) {
-			ans += c[i];
+	ll k = 0;
+	for (int i = 0; i < n; i++) {
+	for (int j = 1; j < 3; j++) {
+			dp[j][i + 1] = dp[j][i];
+			if (a[i] == s * j) {
+				dp[j][i + 1] += dp[j - 1][i];
+			}
 		}
 	}
-	cout << ans << endl;
+	cout << dp[2][n - 1] << endl;
 }
