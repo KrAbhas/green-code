@@ -13,19 +13,28 @@ int main(){
 	int n;
 	cin >> n;
 	vector<int> a(n);
-	int t = n;
+	vector<int> b(n);
+	int t = 0;
 	int m = 0;
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
-		if (i > 0 && a[i - 1] > a[i]) {
-			t = i;
+		if (i != 0) {
+			if (a[i] < a[i - 1]) {
+				t++;
+				m = i;
+				if (a[i] > a[0]) {
+					t++;
+				}
+			}
 		}
 	}
-	for (int i = 0; i < n - 1; i++) {
-		if (a[(i + t) % n] > a[(i + 1 + t) % n]) {
-			cout << -1 << endl;
-			return 0;
-		}
+	if (t != 0 && a[n - 1] > a[0]) {
+		t++;
 	}
-	cout << n - t << endl;
+	if (t == 0)
+		cout << 0 << endl;
+	else if (t == 1){
+		cout << n - m << endl;
+	}
+	else cout << -1 << endl;
 }
