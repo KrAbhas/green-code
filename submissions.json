@@ -4336,6 +4336,22 @@
     ],
     "timestamp": "Jan/05/2022 16:56"
   },
+  "CF141899680": {
+    "contest_id": 1176,
+    "language": "GNU C++17",
+    "path": "codeforces\\1176\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Merge it!",
+    "problem_url": "https://codeforces.com/contest/1176/problem/B",
+    "submission_id": "CF141899680",
+    "submission_url": "https://codeforces.com/contest/1176/submission/141899680",
+    "tags": [
+      "math",
+      "*1100"
+    ],
+    "timestamp": "Jan/07/2022 16:29"
+  },
   "CF142308293": {
     "contest_id": 1624,
     "language": "GNU C++17",
