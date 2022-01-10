@@ -4336,6 +4336,25 @@
     ],
     "timestamp": "Jan/05/2022 16:56"
   },
+  "CF142308293": {
+    "contest_id": 1624,
+    "language": "GNU C++17",
+    "path": "codeforces\\1624\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Palindromes Coloring",
+    "problem_url": "https://codeforces.com/contest/1624/problem/D",
+    "submission_id": "CF142308293",
+    "submission_url": "https://codeforces.com/contest/1624/submission/142308293",
+    "tags": [
+      "binary search",
+      "greedy",
+      "sortings",
+      "strings",
+      "*1400"
+    ],
+    "timestamp": "Jan/11/2022 02:09"
+  },
   "CF142341220": {
     "contest_id": 1624,
     "language": "GNU C++17",
