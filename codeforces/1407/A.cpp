@@ -29,8 +29,31 @@ int main(){
 			for (int i = 0; i < n / 2; i++) cout << 0 << ' ';
 		}
 		else {
-			cout << q - (q & 1) << endl;
-			for (int i = 0; i < q - (q & 1); i++) cout << 1 << ' ';
+			if (q % 2 == 0) {
+				cout << q << endl;
+				for (int i = 0; i < q; i++) cout << 1 << ' ';
+			}
+			else if (q > n / 2) {
+				cout << q - 1 << endl;
+				for (int i = 0; i < q - 1; i++) cout << 1 << ' ';
+			}
+			else {
+				cout << q << endl;
+				int r = 0;
+				int c = 0;
+				bool ok = false;
+				for (int i = 0; i < n; i++) {
+					if (a[i] == 1){
+						cout << 1 << ' ';
+						if (r == 0) r++; 
+						else r--;
+						c++;
+					}
+					else if (!ok && a[i] == 0 && r == 0) cout << ' ';
+					if(c == q - 1) break;
+				}
+				if (!ok) cout << ' ';
+			}
 		}
 		cout << endl;
 	}	
