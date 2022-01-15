@@ -1,83 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
  
-#define ll long long 
-#define deb(x) cout<<#x<<" "<<x<<endl
-#define fo(i,n) for(int i=0;i<n;i++)
-#define nl cout<<endl;
-#define inputi(a) scanf("%d",&a)
-#define inputl(a) scanf("%lld",&a)
-#define printi(a) printf("%d ",a)
-#define printl(a) printf("%lld ",a)
-#define vi vector<int>
-#define vl vector<ll>
-const ll Max2=1e9+7;
-const int Max1=1e6+1;
- 
-template<typename... T>
-void read(T&&... arg){
-	((cin>>arg),...);
-}
- 
-template<typename... T> 
-void write(T&&... arg){ //rvalue reference (new to cpp)
-	((cout<<arg<<" "),...);
-	//cout<<endl;
-}
-
-/*
-int iscomposite[Max1];
-void sieve(){
-	iscomposite[0]=1;
-	iscomposite[1]=1;
-	for(int i=2;i*i<Max1;i++){
-		if(!iscomposite[i]){
-			for(int j=i+i;j<Max1;j=j+i){
-				iscomposite[j]=1;
-			}
-		}
-	}
-}
-
-*/
-
-ll nc2(ll n){
-	return n*(n-1)/2;
-}
-
-void self_max(ll &a, ll b){
-	a=max(a,b);
-}
-
-void self_min(ll &a, ll b){
-	a=min(a,b);
-}
-
-void solve(){
-	int n,k;
-	cin>>n>>k;
-	k--;
-	int ans=-1;
-	if(n%2==0){
-		ans=k%n;
-	}
-	else{
-		int mid=(n-1)/2;
-		ans=(k+(k/mid))%n;
-		//printi(c);
-	}
-	cout<<(ans+1)<<endl;
-}
-
-void solve_t(){
-	int t;
-	cin>>t;
-	while(t--){
-		solve();
-	}
-}
+#define ll long long
+#define all(x) (x).begin(), (x).end()
+#define intl int64_t
+#define pb(x) push_back(x)
+template<class T> bool asnmx (T& a, const T& b){return a < b? a = b, 1: 0;} 
+template<class T> bool asnmn (T& a, const T& b){return b < a? a = b, 1: 0;}
+template<class T> bool asnminpos (T& a, const T& b, const T& i, T& pos){return b < a? a = b, pos = i, 1: 0;}
 
 int main(){
-
-	solve_t();
-}
+	const ll inf = 1e18 + 7;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int tt;
+	cin >> tt;
+	while(tt--) {
+		int n, k;
+		cin >> n >> k; 
+		if (n % 2 == 0) cout << (k % n == 0 ? n : k % n) << endl;
+		else {
+			int t = ((k / (n / 2) + k) - 1 + ((k % (n / 2)) != 0)) % n;
+			cout << (t == 0? n: t) << endl;
+		}
+	}
+	return 0;
+}       	
