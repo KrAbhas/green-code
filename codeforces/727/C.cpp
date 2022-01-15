@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
+
 #define ll long long
 #define all(x) (x).begin(), (x).end()
 #define intl int64_t
@@ -21,7 +21,7 @@ inline void sieve() {
 			}
 	}
 }
- 
+
 int req(int a, int b) {
 	cout << "? " << a + 1 << " " << b + 1 << endl;
 	cout.flush();
@@ -29,7 +29,7 @@ int req(int a, int b) {
 	cin >> x;
 	return x;
 }
- 
+
 int main(){
 	const ll inf = 1e18 + 7;
 	ios_base::sync_with_stdio(false);
