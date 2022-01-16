@@ -28,32 +28,28 @@ int main(){
 	while(tt--) {
 		int n;
 		cin >> n; 
-		vector<int> a(n);
-		vector<int> b(n);
-		vector<pair<int,int>> c(n);
-		for (int i = 0; i < n; i++) cin >> a[i];
-		for (int i = 0; i < n; i++) cin >> b[i];
+		vector<pair<int,int>> a(n);
 		for (int i = 0; i < n; i++) {
-			b[i] = a[i] - b[i] + 1;
-			c[i] = {a[i], b[i]};
+			cin >> a[i].second;
 		}
-		int dp[n] = {0};
-		sort(all(c));
 		for (int i = 0; i < n; i++) {
-			dp[i] = c[i].second;
-			for (int j = 0; j <= i; j++) {
-				if (dp[i] <= c[j].first) {
-					dp[i] = min(dp[i], dp[j]);
-				}
-				dp[j] = min(dp[i], dp[j]);
+			cin >> a[i].first;
+			a[i].first = a[i].second - a[i].first + 1; 
+		}
+		sort(all(a));
+		ll ans = 0;
+		ll l = 1, r = 0;
+		for (auto [cl, cr]: a) {
+			if (cl > r) {
+				ans += f(r - l + 1);
+				l = cl;
+				r = cr;
+			}
+			else {
+				r = max(r, (ll)cr);
 			}
 		}
-		ll ans = 0;
-		for (int i = 0; i < n - 1; i++) {
-			if (dp[i] != dp[i + 1])
-				ans += f(c[i].first - dp[i] + 1);
-		}
-		ans += f(c[n - 1].first - dp[n - 1] + 1);
+		ans += f(r - l + 1);
 		cout << ans << endl;
 	}
 	return 0;
