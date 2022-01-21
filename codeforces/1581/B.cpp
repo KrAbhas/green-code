@@ -1,47 +1,54 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+ 
 #define ll long long
-#define fact(a,b) factorial (a, b)
+#define all(x) (x).begin(), (x).end()
+#define intl int64_t
+#define pb(x) push_back(x)
+#define unmap unordered_map
+#define unset unordered_set
+template<class T> bool asnmx (T& a, const T& b){return a < b? a = b, 1: 0;} 
+template<class T> bool asnmn (T& a, const T& b){return b < a? a = b, 1: 0;}
+template<class T> bool asnminpos (T& a, const T& b, T& pos, const T& i){return b < a? a = b, pos = i, 1: 0;}
+template<class T> bool asnmaxpos (T& a, const T& b, T& pos, const T& i){return a < b? a = b, pos = i, 1: 0;}
 
-ll factorial (int k, int s) {
-	ll f = 1;
-	for (int i = s; i <= k; i++) {
-		f *= i;
-	}
-	return f;
-}
+const ll maX = 1e4 + 7;
 
-ll ncr(int n, int r) {
-	int rd = n - r;
-	int m = min(r, rd);
-	ll nf = fact(n, (rd + 1));
-	ll rf = fact((n - m), 1);
-	ll ans = nf * 1.0 / rf;
-	return ans;
-}
+long long power(long long x, long long y, long long p) 
+{ 
+    long long res;
+    return res; 
+} 
 
-int main() {
-	int tt;
+
+int main(){
+	const ll inf = 1e18 + 7;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	ll tt;
 	cin >> tt;
-	while(tt--) {
-		ll n, m, k;
-		cin >> n >> m >> k;
-		if (m < n - 1 || m > (n * (n - 1ll) / 2)) {
+	while (tt--) {
+		ll n;
+		cin >> n; 
+		ll m, k;
+		cin >> m >> k;
+		if (m < n - 1 || m > n * (n - 1) / 2) {
 			cout << "NO\n";
+			continue;
 		}
-		else if (n == 1 && k > 1) {
+		if (k > 3) {
 			cout << "YES\n";
+			continue;
 		}
-		else if (m == (n * (n - 1ll) / 2) && k > 2) {
+		if (k > 2 && n * (n - 1) / 2 == m) {
 			cout << "YES\n";
+			continue;
 		}
-		else if (m >= (n - 1) && m < (n * (n - 1ll) / 2) && k > 3) {
+		if (k > 1 && n == 1) {
 			cout << "YES\n";
+			continue;
 		}
-		else {
-			cout << "NO\n";
-		}
-
+		cout << "NO\n";
 	}
-}
+}       	
+
