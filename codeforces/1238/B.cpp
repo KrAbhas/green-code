@@ -37,18 +37,15 @@ int main(){
 		int c = 0;
 		int k = 0;
 		sort(all(a));
-		vector<int> v;
-		v.pb(a[0]);
-		for (int i = 0; i < n; i++) {
-			if (a[i] != v.back())
-				v.pb(a[i]);
-		}
-		int rt = (int)v.size() - 1;
-		for (int i = rt; i >= 0; i--) {
-			if (v[i] <= k) {
-				break;
+		int rt = n - 1;
+		int lt = 0;
+		while (lt <= rt) {
+			rt--;
+			while (rt >= lt && a[rt] == a[rt + 1]) {
+				rt--;
 			}
 			k += r;
+			lt = upper_bound(a.begin(), a.end(), k) - a.begin();
 			c++;
 		}
 		cout << c << endl;
