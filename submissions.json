@@ -4972,6 +4972,24 @@
     ],
     "timestamp": "Jan/16/2022 03:10"
   },
+  "CF143952266": {
+    "contest_id": 1178,
+    "language": "GNU C++17",
+    "path": "codeforces\\1178\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Tiles",
+    "problem_url": "https://codeforces.com/contest/1178/problem/C",
+    "submission_id": "CF143952266",
+    "submission_url": "https://codeforces.com/contest/1178/submission/143952266",
+    "tags": [
+      "combinatorics",
+      "greedy",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "Jan/25/2022 14:25"
+  },
   "CF143953693": {
     "contest_id": 1194,
     "language": "GNU C++17",
