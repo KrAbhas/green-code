@@ -30,7 +30,7 @@ int main(){
 		for (ll i = 0; i < n; i++) cin >> a[i];
 		ll t = 0;
 		unmap<int,pi> um;
-		um.reserve(4096); //updated !
+		um.reserve(32768); //updated !
   		um.max_load_factor(0.25);
 		for (ll i = 0; i < n; i++) {
 			ll p = ceil(a[i] * 1.0 / k) * k - a[i];
