@@ -29,9 +29,7 @@ int main(){
 		vector<int> a(n);
 		for (ll i = 0; i < n; i++) cin >> a[i];
 		ll t = 0;
-		unmap<int,pi> um;
-		um.reserve(32768); //updated !
-  		um.max_load_factor(0.25);
+		map<int,pi> um;
 		for (ll i = 0; i < n; i++) {
 			ll p = ceil(a[i] * 1.0 / k) * k - a[i];
 			um[p].first++;
@@ -40,7 +38,7 @@ int main(){
 				asnmx(t, p);
 		}
 		ll s = 0;
-		unmap<int,pi>::iterator it;
+		map<int,pi>::iterator it;
 		for (it = um.begin(); it != um.end(); it++) {
 			ll p = it->first;
 			ll q = it->second.first;
