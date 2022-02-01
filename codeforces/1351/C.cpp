@@ -44,11 +44,12 @@ int main(){
 				y += dir[ch];
 			}
 			else x += dir[ch];
-			if (st.count({{a, b},{x, y}}) || st.count({{x, y}, {a, b}})) {
+			if (st.count({{a, b},{x, y}})) {
 				c++;
 			}
 			else {
 				st.insert({{a, b},{x, y}});
+				st.insert({{x, y}, {a, b}});
 				c += 5;
 			}
 		}
