@@ -27,22 +27,21 @@ const int maX = 2 * 1e5 + 1;
 int _,n,k;
 ll a[1010];
 bool check() {
-	set<int> s;
-	for (int i = 0; i < n; i++) {
-		ll t = a[i];
-		int p = 0;
-		while (t) {
-			if(t % k > 1) {
+	set<int> pos;
+	rep(i,0,n) {
+		ll x=a[i];
+		int d=0;
+		while (x) {
+			if (x%k!=0&&x%k!=1) {
 				return 0;
 			}
-			if (t % k == 1) {
-				if (s.count(p)) {
-					return 0;
-				}	
-				s.insert(p);
+			if (x%k==1) {
+				//printf("dd %d\n",d);
+				if (pos.count(d)) return 0;
+				pos.insert(d);
 			}
-			p++;
-			t = t / k;
+			d+=1;
+			x/=k;
 		}
 	}
 	return 1;
