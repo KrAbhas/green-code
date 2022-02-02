@@ -15,12 +15,38 @@ template<class T> bool asnmn (T& a, const T& b){return b < a? a = b, 1: 0;}
 template<class T> bool asnminpos (T& a, const T& b, T& pos, const T& i){return b < a? a = b, pos = i, 1: 0;}
 template<class T> bool asnmaxpos (T& a, const T& b, T& pos, const T& i){return a < b? a = b, pos = i, 1: 0;}
 typedef pair<int, int> pi;
- 
+
 #define PI 3.14159265
- 
+
 const int maX = 2 * 1e5 + 1;
- 
- 
+
+#define rep(i,a,n) for (int i = a; i < n; i++)
+
+#define PI 3.14159265
+
+int _,n,k;
+ll a[1010];
+bool check() {
+	set<int> s;
+	for (int i = 0; i < n; i++) {
+		ll t = a[i];
+		int p = 0;
+		while (t) {
+			if(t % k > 1) {
+				return 0;
+			}
+			if (t % k == 1) {
+				if (s.count(p)) {
+					return 0;
+				}	
+				s.insert(p);
+			}
+			p++;
+			t = t / k;
+		}
+	}
+	return 1;
+}
 int main(){
 	const ll inf = 1e18 + 7;
 	ios_base::sync_with_stdio(false);
@@ -28,32 +54,9 @@ int main(){
 	int tt;
 	cin >> tt;
 	while (tt--) {
-		ll n, k;
 		cin >> n >> k;
-		set<int> s;
-		bool ok = true;
-		vector<ll> a(n);
 		for (int i = 0; i < n; i++) cin >> a[i];
-		for (int i = 0; i < n; i++) {
-			ll t = a[i];
-			int p = 0;
-			while (t) {
-				if(t % k > 1) {
-					ok = false;
-					break;
-				}
-				if (t % k == 1) {
-					if (s.count(p)) {
-						ok = false;
-						break;
-					}
-					s.insert(p);
-				}
-				p++;
-				t = t / k;
-			}
-			if (!ok) break;
-		}
+		bool ok = check();
 		if (ok) cout << "YES\n";
 		else cout << "NO\n";
 	}
