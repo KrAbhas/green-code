@@ -31,12 +31,11 @@ int main(){
 		ll n, k;
 		cin >> n >> k;
 		set<int> s;
-		ll t;
 		bool ok = true;
 		vector<ll> a(n);
 		for (int i = 0; i < n; i++) cin >> a[i];
 		for (int i = 0; i < n; i++) {
-			t = a[i];
+			ll t = a[i];
 			int p = 0;
 			while (t) {
 				if(t % k > 1) {
