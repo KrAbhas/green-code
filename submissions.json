@@ -5682,6 +5682,26 @@
     ],
     "timestamp": "Jan/25/2022 15:03"
   },
+  "CF145006973": {
+    "contest_id": 1316,
+    "language": "GNU C++17",
+    "path": "codeforces\\1316\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "String Modification",
+    "problem_url": "https://codeforces.com/contest/1316/problem/B",
+    "submission_id": "CF145006973",
+    "submission_url": "https://codeforces.com/contest/1316/submission/145006973",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "implementation",
+      "sortings",
+      "strings",
+      "*1400"
+    ],
+    "timestamp": "Feb/03/2022 13:37"
+  },
   "CF145017500": {
     "contest_id": 1303,
     "language": "GNU C++17",
