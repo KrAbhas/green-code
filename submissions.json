@@ -6841,6 +6841,23 @@
     ],
     "timestamp": "Feb/08/2022 20:58"
   },
+  "CF145831550": {
+    "contest_id": 1190,
+    "language": "GNU C++17",
+    "path": "codeforces\\1190\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Tokitsukaze and Discard Items",
+    "problem_url": "https://codeforces.com/contest/1190/problem/A",
+    "submission_id": "CF145831550",
+    "submission_url": "https://codeforces.com/contest/1190/submission/145831550",
+    "tags": [
+      "implementation",
+      "two pointers",
+      "*1400"
+    ],
+    "timestamp": "Feb/10/2022 14:47"
+  },
   "CF146051475": {
     "contest_id": 1189,
     "language": "GNU C++17",
