@@ -26,18 +26,34 @@ int main(){
 	cin.tie(NULL);
 	int n;
 	cin >> n;
-	vector<int> a(n);
-	vector<int> pref(n + 1);
+	vector<vector<int>> pref(log2(n) + 1, vector<int>(n + 1));
 	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-		pref[i + 1] = a[i] + pref[i];
+		cin >> pref[0][i + 1];
 	}
-	
+	ll p = 1;
+	for (int i = 1; i <= log2(n) + 1; i++) {
+		p = p * 2;
+		for (int j = p; j <= n; j++) {
+			pref[i][j] = (pref[i - 1][j - p / 2] + pref[i - 1][j]) % 10;
+		}
+	}
+	vector<vector<int>> dp(log2(n) + 1, vector<int>(n + 1));
+	p = 1;
+	for (int i = 1; i <= log2(n); i++) {
+		p = p * 2;
+		for (int j = p; j <= n; j++) {
+			dp[i][j] = dp[i - 1][j] + dp[i - 1][j - p / 2];
+			if (pref[i - 1][j] + pref[i - 1][j - p / 2] >= 10) {
+				dp[i][j]++;
+			}
+		}
+	}
 	int tt;
 	cin >> tt;
 	while (tt--) {
 		int a, b;
 		cin >> a >> b;
-		cout << (pref[b] - pref[a - 1]) / 10 << endl;
+		int k = log2(b - a + 1);
+		cout << dp[k][b] << endl;
 	}
 }
