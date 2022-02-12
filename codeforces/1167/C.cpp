@@ -1,0 +1,74 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define all(x) (x).begin(), (x).end()
+#define intl int64_t
+#define pb(x) push_back(x)
+#define unmap unordered_map
+#define unset unordered_set
+#define bit_set_count(x) __builtin_popcountll(x)
+// use for unordered map (for high collison) with 2^x:
+// um.reserve(4096); um.max_load_factor(0.25);
+template<class T> bool asnmx (T& a, const T& b){return a < b? a = b, 1: 0;} 
+template<class T> bool asnmn (T& a, const T& b){return b < a? a = b, 1: 0;}
+template<class T> bool asnminpos (T& a, const T& b, T& pos, const T& i){return b < a? a = b, pos = i, 1: 0;}
+template<class T> bool asnmaxpos (T& a, const T& b, T& pos, const T& i){return a < b? a = b, pos = i, 1: 0;}
+typedef pair<int, int> pi;
+ 
+#define PI 3.14159265
+ 
+const int maX = 1e9 + 7;
+ 
+int main(){
+	const ll inf = 1e18 + 7;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int n, m;
+	cin >> n >> m;
+	vector<vector<int>> G(n + 1);
+	int k;
+	for (int i = 0; i < m; i++) {
+		cin >> k;
+		int a;
+		if (k >= 1)
+			cin >> a;
+		for (int i = 1; i < k; i++) {
+			int b;
+			cin >> b;
+			G[a].pb(b);
+			G[b].pb(a);
+		}
+	}
+	vector<bool> vis(n + 1);
+	vector<int> ans(n + 1);
+	for (int i = 1; i <= n; i++) {
+		if (vis[i]) {
+			continue;
+		}
+		stack<int> st;
+		st.push(i);
+		vector<int> dsu;
+		int a = 1;
+		dsu.pb(i);
+		vis[i] = true;
+		while (!st.empty()) {
+			int t = st.top();
+			st.pop();
+			for (int k: G[t]) {
+				if (vis[k]) continue;
+				a++;
+				st.push(k);
+				vis[k] = true;
+				dsu.pb(k);
+			}
+		}
+		for (int j: dsu) {
+			ans[j] = a;
+		}
+	}
+	for (int i = 1; i <= n; i++) {
+		cout << ans[i] << ' ';
+	}
+	cout << endl;
+}
