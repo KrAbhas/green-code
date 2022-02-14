@@ -31,13 +31,20 @@ int main(){
 	string str = "";
 	int c = 0;
 	for (int i = 0; i < n; i++) {
-		str.pb(s[i]);
-		c++;
-		if (c % 2 == 0 && c > 0 && str[c - 1] == str[c - 2]) {
-			str.pop_back();
-			c--;
-		} 
+		if (i < n - 1 && s[i] != s[i + 1]) {
+			//if (c % 2 == 1 && str[c - 1] == s[i]) continue;
+			str += s[i]; 
+			c++;
+		}
+		else {
+			if (i < n - 1 && c % 2 == 1 && str[c - 1] != s[i]) {
+				str += s[i];
+				c++;
+			} 
+		}
 	}
-	if (str.length() % 2 == 1) str.pop_back();
+	if (str.length() % 2 == 1) {
+		str += s[n - 1];
+	}
 	cout << n - str.length() << endl << str << endl;
 }
