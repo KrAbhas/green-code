@@ -6841,6 +6841,25 @@
     ],
     "timestamp": "Feb/08/2022 20:58"
   },
+  "CF147103991": {
+    "contest_id": 538,
+    "language": "GNU C++17",
+    "path": "codeforces\\538\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Quasi Binary",
+    "problem_url": "https://codeforces.com/contest/538/problem/B",
+    "submission_id": "CF147103991",
+    "submission_url": "https://codeforces.com/contest/538/submission/147103991",
+    "tags": [
+      "constructive algorithms",
+      "dp",
+      "greedy",
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "Feb/20/2022 23:32"
+  },
   "CF147114151": {
     "contest_id": 698,
     "language": "GNU C++17",
