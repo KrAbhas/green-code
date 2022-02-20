@@ -22,18 +22,6 @@ const int maX = 1e5 + 10;
 const int mn = 1010;
 int n;
 int a[101];
-int dp[101][3];
-
-void fun(int i) {
-	dp[i][0] = 1;
-	if (a[i] == 1 || a[i] == 0) {
-		dp[i][2] = 1;
-	}
-	if (a[i] == 2 || a[i] == 0) {
-		dp[i][1] = 1;
-	}
-}
-
 int main(){
 	const ll inf = 1e18 + 7;
 	ios_base::sync_with_stdio(false);
@@ -42,16 +30,17 @@ int main(){
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
 	}
-	fun(0);
+	int ans = (a[0] == 0);
 	for (int i = 1; i < n; i++) {
-		dp[i][0] = min({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]}) + 1;
-		dp[i][1] = min(dp[i - 1][0], dp[i - 1][2]);
-		if (a[i] == 2 || a[i] == 0) {
-			dp[i][1]++;
+		if (a[i] == 3) {
+			if (a[i - 1] == 1) a[i] = 2;
+			else if (a[i - 1] == 2) a[i] = 1;
 		}
-		dp[i][2] = min(dp[i - 1][0], dp[i - 1][1]);
-		if (a[i] == 1 || a[i] == 0)
-			dp[i][2]++;
+		else if (a[i] == a[i - 1] && (a[i] == 1 || a[i] == 2)) {
+			a[i] = 0;
+		}
+		if (a[i] == 0) 
+			ans++;
 	}
-	cout << min({dp[n - 1][0], dp[n - 1][1], dp[n - 1][2]}) << endl;
+	cout << ans << endl;
 }
