@@ -1,119 +1,53 @@
 #include<bits/stdc++.h>
 using namespace std;
  
-#define ll long long 
-#define deb(x) cout<<#x<<" "<<x<<endl
-#define fo(i,n) for(int i=0;i<n;i++)
-#define nl cout<<endl;
-#define inputi(a) scanf("%d",&a)
-#define inputl(a) scanf("%lld",&a)
-#define printi(a) printf("%d ",a)
-#define printl(a) printf("%lld ",a)
-#define vi vector<int>
-#define vl vector<ll>
-const ll Max2=1e9+7;
-const int Max1=1e6+1;
+#define ll long long
+#define all(x) (x).begin(), (x).end()
+#define intl int64_t
+#define pb(x) push_back(x)
+#define unmap unordered_map
+#define unset unordered_set
+#define bit_set_count(x) __builtin_popcountll(x)
+// use for unordered map (for high collison) with 2^x:
+// um.reserve(4096); um.max_load_factor(0.25);
+template<class T> bool asnmx (T& a, const T& b){return a < b? a = b, 1: 0;} 
+template<class T> bool asnmn (T& a, const T& b){return b < a? a = b, 1: 0;}
+template<class T> bool asnminpos (T& a, const T& b, T& pos, const T& i){return b < a? a = b, pos = i, 1: 0;}
+template<class T> bool asnmaxpos (T& a, const T& b, T& pos, const T& i){return a < b? a = b, pos = i, 1: 0;}
+typedef pair<int, int> pi;
  
-template<typename... T>
-void read(T&&... arg){
-	((cin>>arg),...);
-}
+#define PI 3.14159265
  
-template<typename... T> 
-void write(T&&... arg){ //rvalue reference (new to cpp)
-	((cout<<arg<<" "),...);
-	//cout<<endl;
-}
-
-void self_max(ll &a, ll b){
-	a=max(a,b);
-}
-
-void self_min(ll &a, ll b){
-	a=min(a,b);
-}
-
-double findprobab(int n, int r){
-	//deb(r);
-	int k=min(r,n-r);
-	int t=max(r,n-r);
-	int factr=1;
-	int factn=1;
-	for(int i=1;i<=k;i++){
-		factr=factr*i;
-		factn=factn*(t+i);
-	}
-	//deb(factr);
-	//deb(factn);
-	double prob=factn/(factr);
-
-	//deb(prob);
-	return prob/pow(2,n);
-}
-void solve(){
-	string sa,sb;
-	cin>>sa;
-	cin>>sb;
-	int aplus=0;
-	int aminus=0;
-	int bplus=0;
-	int bminus=0;
-	int bque=0;
-	for(char ch: sa){
-		if(ch=='+'){
-			aplus++;
-		}
-		else aminus++;
-	}
-	for(char ch: sb){
-		if(ch=='+'){
-			bplus++;
-		}
-		else if(ch=='-')
-			bminus++;
-		else bque++;
-	}
-	int apos=aplus-aminus;
-	int bpos=bplus-bminus;
-	int c=apos-bpos;
-	int t=0;
-	double pro=0;
-	cout.precision(20);
-	//deb(c);
-	//deb(bque);
-	if(c>bque || c<-1*bque){
-		//printf("HI");
-		printf("%d",pro);
-		return;
-	}
-	else{
-		int k=bque-abs(c);
-		t=t+abs(c);
-		if(k%2!=0){
-			cout<<pro;
-			return;
-		}
-		else{
-			//printf("hi");
-			t=t+k/2;
-			pro=findprobab(bque,t);
-			//cout<<pro;
-			cout.precision(20);
-			cout<<pro;
-			return;
-		}
-	}
-}
-
-void solve_t(){
-	int t;
-	cin>>t;
-	while(t--){
-		solve();
-	}
-}
+const int maX = 1e5 + 10;
+const int mn = 1010;
+string s1, s2;
 
 int main(){
-
-	solve();
+	const ll inf = 1e18 + 7;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int fact[11];
+	fact[0] = 1;
+	for (int i = 1; i < 11; i++) {
+		fact[i] = i * fact[i - 1];
+	}
+	cin >> s1;
+	cin >> s2;
+	int p1, p2, m1,m2;
+	p1=m1=0;
+	int e = 0;
+	for (char ch:s1) {
+		if (ch == '+') p1++;
+		else m1++;
+	}
+	for (char ch:s2) {
+		if (ch == '+') p1--;
+		else if (ch == '-') m1--;
+		else e++;
+	}
+	if (p1 < 0 || m1 < 0) {
+		cout << 0 << endl;
+		return 0;
+	}
+	cout << setprecision(20) << fact[e] / (fact[p1] * fact[e - p1]) / pow(2, e) << endl;
 }
