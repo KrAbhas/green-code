@@ -51,6 +51,9 @@ int main(){
 				if (x == 0) ok = false;
 			}
 		}
+		for (int i = 0; i < n; i++) {
+			if (a[i] == -1) a[i] = 0;
+		}
 		if (!ok) cout << -1;
 		else {
 			for (int i : a) {
