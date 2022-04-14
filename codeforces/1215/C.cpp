@@ -51,7 +51,7 @@ int main(){
 		for (b; b < (int)ba.size() - 1; b += 2) {
 			ans.push_back({ba[b], ba[b + 1]});
 		}
-		if (a < ab.size()) {
+		if (a < ab.size() && ab.size() > 0) {
 			ans.push_back({ab[a], ab[a]});
 			ans.push_back({ab[a], ba[b]});
 		}
