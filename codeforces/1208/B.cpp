@@ -27,8 +27,7 @@ int main(){
 	int n;
 	cin >> n;
 	vector<int> a(n);
-	unmap<int,int> m;
-	m.reserve(4096); m.max_load_factor(0.25);
+	map<int,int> m;
 	int t = 0;
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
@@ -40,7 +39,7 @@ int main(){
 	if (t == 0)
 		ans = 0;
 	for (int i = 0; i < n; i++) {
-		unmap<int,int> temp = m;
+		map<int,int> temp = m;
 		int k = t;
 		for (int j = i; j < n; j++) {
 			if (temp[a[j]]-- == 2) {
