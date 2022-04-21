@@ -35,16 +35,18 @@ int main(){
 		for (int i = 1; i < n; i++) {
 			dp[0][i] = a + b;
 			dp[1][i] = a + b + b;
-			if (s[i] == '0') {
+			if (s[i - 1] == '0' && s[i] == '0') {
 				dp[0][i] += min(dp[0][i - 1], dp[1][i - 1] + a);
 				dp[1][i] += min(dp[0][i - 1] + a, dp[1][i - 1]);
 			}
-			else {
+			else if (s[i - 1] == '0' && s[i] == '1') {
 				dp[1][i] += min(dp[0][i - 1] + a, dp[1][i - 1]);
 				dp[0][i] = inf;
 			}
-			if (s[i - 1] == '1')
+			else {
+				dp[1][i] += dp[1][i - 1];
 				dp[0][i] = inf;
+			}
 			//cout << dp[0][i] << ' ' << dp[1][i] << endl;
 		}
 		cout << min(dp[0][n - 1], dp[1][n - 1] + a) + b << endl;
