@@ -30,17 +30,18 @@ int main(){
 		string s;
 		cin >> n >> k >> s;
 		string p = "RGB";
-		int m = maxx;
-		for (int t: {0,1,2}) {
-			vector<int> dp;
-			int ch = 0;
-			for (int j = 0; j < n; j++) {
-				dp.pb(s[j] != p[(t + j) % 3]);
-				ch += dp.back();
-				if (j >= k) 
-					ch -= dp[j - k];
-				if (j >= k - 1)
-					m = min(m, ch);
+		int m = 2000;
+		for (int i = 0; i + k <= n; i++) {
+			for (int t: {0,1,2}) {
+				int r = t;
+				int ch = 0;
+				for (int j = i; j < i + k; j++) {
+					if (p[r] != s[j]) {
+						ch++;
+					}
+					r = (r + 1) % 3;
+				}
+				m = min(m, ch);
 			}
 		}
 		cout << m << endl;
