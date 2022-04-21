@@ -17,7 +17,7 @@ template<class T> bool asnmaxpos (T& a, const T& b, T& pos, const T& i){return a
 typedef pair<int, int> pi;
  
 #define PI 3.14159265
-const ll inf = 1e18 + 7;
+const ll inf = 1e9 + 7;
 const int maxx = 2 * 1e5 + 10;
 const int mn = 1010;
 
@@ -28,27 +28,49 @@ int main(){
 	while (tt--) {
 		int n, a, b; string s;
 		cin >> n >> a >> b >> s;
-		vector<vector<ll>> dp(2, vector<ll>(n + 1));
-		bool high = 0;
-		dp[0][0] = a + b;
-		dp[1][0] = inf; 
-		for (int i = 1; i < n; i++) {
-			dp[0][i] = a + b;
-			dp[1][i] = a + b + b;
-			if (s[i - 1] == '0' && s[i] == '0') {
-				dp[0][i] += min(dp[0][i - 1], dp[1][i - 1] + a);
-				dp[1][i] += min(dp[0][i - 1] + a, dp[1][i - 1]);
+		bool state = 0; bool tstate = 0;
+		ll p = 0; ll q = 0;
+		ll c = 0;
+		for (int i = 0; i < n; i++) {
+			c += a + b;
+			if (!state && i < n - 1 && s[i] == '0' && s[i + 1] == '1') {
+				c += a;
+				state = !state;
+				tstate = state;
 			}
-			else if (s[i - 1] == '0' && s[i] == '1') {
-				dp[1][i] += min(dp[0][i - 1] + a, dp[1][i - 1]);
-				dp[0][i] = inf;
+			else if (state) {
+				q += b;
+				if (tstate) {
+					p += b;
+				}
+				if (tstate && i < n - 1 && s[i + 1] == '0' && s[i] == '0') {
+					p += a;
+					tstate = !tstate;
+				}
+				
+				if (i < n - 1 && s[i + 1] == '1' && s[i] == '0') {
+					if (!tstate) {
+						p += a;
+					}
+					tstate = state;
+					if (q <= p) {
+						c += q;
+						p = q = 0;
+					}
+					else {
+						c += p;
+						p = q = 0;
+					}
+				}
 			}
-			else {
-				dp[1][i] += dp[1][i - 1];
-				dp[0][i] = inf;
-			}
-			//cout << dp[0][i] << ' ' << dp[1][i] << endl;
 		}
-		cout << min(dp[0][n - 1], dp[1][n - 1] + a) + b << endl;
+		if (state) {
+			q += a;
+			if (tstate)
+				p += a;
+			c += min(p, q);
+		}
+		c += b;
+		cout << c << endl;
 	}
 }
