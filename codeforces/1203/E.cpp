@@ -43,8 +43,9 @@ int main(){
 			s.insert(w[i]);
 			if (s.size() == k + 1) 
 				continue;
-			s.insert(w[i] - 1);
+			if (w[i] - 1 > 0)
+				s.insert(w[i] - 1);
 		}
-		cout << (int)s.size() - (*s.begin() == 0? 1: 0) << endl;
+		cout << (int)s.size() << endl;
 	}
 }
