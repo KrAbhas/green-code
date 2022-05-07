@@ -36,11 +36,21 @@ int main(){
 			a[ch - 'a']++;
 		}
 		int d = 0;
-		int ans = 0;
+		vector<int> v;
 		for (int i = 0; i < n; i++) {
 			if (a[s[i] - 'a']) {
-				ans = max(ans,i - d);
+				v.pb(i - d);
 				d = i;
+			}
+		}
+		d = (int)v.size();
+		sort (all(v));
+		int b = 0;
+		int ans = 0;
+		for (int i = 0; i < d; i++) {
+			if (b != v[i]) {
+				ans += (v[i] - b);
+				b = v[i];
 			}
 		}
 		cout << ans << endl;
