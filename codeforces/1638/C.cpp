@@ -26,15 +26,16 @@ int main(){
 		int n;
 		cin >> n;
 		priority_queue<int> p;
-		ll x;
-		ll s = 0;
-		int ans = 0;
+		int x;
 		for (int i = 0; i < n; i++) {
 			cin >> x;
-			s += x;
-			if ((i + 1) * 1LL * (i + 2) / 2 == s)
-				ans++;
+			int m = x;
+			while (!p.empty() && x < p.top()) {
+				m = max(m, p.top());
+				p.pop();
+			}
+			p.push(m);
 		}
-		cout << ans << endl;
+		cout << p.size() << endl;
 	}
 }
