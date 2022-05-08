@@ -1,37 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+ 
 #define ll long long
 #define all(x) (x).begin(), (x).end()
 #define intl int64_t
 #define pb(x) push_back(x)
+#define unmap unordered_map
+// use for unordered map (for high collison) with 2^x:
+// um.reserve(4096); um.max_load_factor(0.25);
+#define unset unordered_set
+#define bit_set_count(x) __builtin_popcountll(x)
+typedef pair<int, int> pi;
+ 
+#define PI 3.14159265
+const ll inf = 1e9 + 7;
+const int maX = 2 * 1e5 + 10;
+const int mn = 1025;
 
 int main(){
-	const ll inf = 1e18 + 7;
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	int tt;
 	cin >> tt;
 	while (tt--) {
-		int n, k;
+		int n;
+		vector<int> a(maX);
 		cin >> n;
-		vector<int> a(n);
-		vector<int> dp(150001, -1);
-		int m = INT_MAX;
-		pair<int,int> p;
+		int ans = maX;
+		int x = 0;
 		for (int i = 0; i < n; i++) {
-			cin >> a[i];
-			if (dp[a[i]] == -1) {
-				dp[a[i]] = i;
+			cin >> x;
+			if (a[x]) {
+				ans = min(ans, i + 1 - a[x]);
 			}
-			else {
-				if (m > i - dp[a[i]])
-					p = {dp[a[i]], i};
-				m = min(m, i - dp[a[i]]);
-				dp[a[i]] = i;
-			}
+			a[x] = i + 1;
 		}
-		if (m == INT_MAX) cout << -1 << endl;
-		else cout << max(n - p.second + p.first, p.first + (n - p.second)) << endl;
+		if (ans != maX)
+			cout << (n - ans) << endl;
+		else cout << -1 << endl;
 	}
 }
