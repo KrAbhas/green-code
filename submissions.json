@@ -7597,6 +7597,22 @@
     ],
     "timestamp": "Feb/25/2022 09:50"
   },
+  "CF156281870": {
+    "contest_id": 1322,
+    "language": "GNU C++17",
+    "path": "codeforces\\1322\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Unusual Competitions",
+    "problem_url": "https://codeforces.com/contest/1322/problem/A",
+    "submission_id": "CF156281870",
+    "submission_url": "https://codeforces.com/contest/1322/submission/156281870",
+    "tags": [
+      "greedy",
+      "*1300"
+    ],
+    "timestamp": "May/08/2022 16:57"
+  },
   "CF156288212": {
     "contest_id": 1369,
     "language": "GNU C++17",
