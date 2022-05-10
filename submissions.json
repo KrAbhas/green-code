@@ -7597,6 +7597,24 @@
     ],
     "timestamp": "Feb/25/2022 09:50"
   },
+  "CF156753311": {
+    "contest_id": 1676,
+    "language": "GNU C++17",
+    "path": "codeforces\\1676\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "X-Sum",
+    "problem_url": "https://codeforces.com/contest/1676/problem/D",
+    "submission_id": "CF156753311",
+    "submission_url": "https://codeforces.com/contest/1676/submission/156753311",
+    "tags": [
+      "brute force",
+      "greedy",
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "May/10/2022 23:47"
+  },
   "CF156817025": {
     "contest_id": 1567,
     "language": "GNU C++17",
