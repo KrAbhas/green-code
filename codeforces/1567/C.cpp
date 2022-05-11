@@ -18,17 +18,6 @@ const ll inf = 1e9 + 7;
 const int maX = 1e5 + 10;
 const int mn = 1025;
 
-ll ways (ll k, ll n, vector<ll> &a, vector<ll> &w) {
-	if (k == n - 1) return w[a[n - 1]];
-	else if (k == n - 2) return w[a[n - 1]] * w[a[n - 2]];
-	ll ans = w[a[k]] * ways(k + 1, n, a, w);
-	if (a[k] == 0) return ans;
-	a[k + 2] += 10;
-	ll res = w[a[k] - 1] * ways(k + 1, n, a, w);
-	a[k + 2] -= 10;
-	return ans + res; 
-}
-
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
@@ -37,21 +26,15 @@ int main(){
 	while (tt--) {
 		ll n;
 		cin >> n;
-		vector<ll> a;
+		ll a = 0; ll b = 0;
+		int k = 0;
 		while (n > 0) {
-			a.pb(n % 10);
+			if (k % 2)
+				a = a + (n % 10 * pow(10, k / 2));
+			else b = b + (n % 10 * pow(10, k / 2));
 			n /= 10;
+			k++;
 		}
-		reverse(a.begin(), a.end());
-		vector<ll> w(20);
-		for (int i = 0; i < 20; i++) {
-			for (int j = 0; j <= i; j++) {
-				int k = i - j;
-				if (k < 10 && j < 10)
-					w[i]++;
-			}
-		}
-		n = sz(a);
-		cout << ways(0, n, a, w) - 2 << endl;
+		cout << (a + 1) * (b + 1) - 2 << endl;
 	}
 }
