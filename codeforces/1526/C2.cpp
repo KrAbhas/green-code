@@ -24,31 +24,19 @@ int main(){
 	int n;
 	cin >> n;
 	vector<int> a(n);
-	int k = 0;
 	priority_queue<int, vector<int>, greater<int>> pq;
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
-		if (a[i] >= 0)
-			k++;
 	}
 	ll s = 0;
 	int c = 0;
 	for (int i = 0; i < n; i++) {
-		if (s + a[i] >= 0) {
-			if (a[i] < 0) {
-				pq.push(a[i]);
-			}
-			s += a[i];
-			c++;
-		}
-		else {
-			if (!pq.empty() && a[i] > pq.top()) {
-				s -= pq.top();
-				s += a[i];
-				pq.pop();
-				pq.push(a[i]);
-			}
+		s += a[i];
+		pq.push(a[i]);
+		while (!pq.empty() && s < 0) {
+			s -= pq.top();
+			pq.pop();
 		}
 	}
-	cout << k + sz(pq) << endl;
+	cout << sz(pq) << endl;
 }
