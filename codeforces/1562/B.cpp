@@ -18,7 +18,7 @@ const ll inf = 1e9 + 7;
 const ll maxx = 2 * 1e5 + 10;
 const ll mn = 1025;
 
-const int maX = 1e5 + 1;
+const int maX = 1e3 + 1;
 bool comp[maX];
 inline void sieve() {
 	memset(comp, false, sizeof(comp));
@@ -46,44 +46,26 @@ int main(){
 		vector<char> vec(n);
 		for (int i = 0; i < n; i++) cin >> vec[i];
 		for (int i = 0; i < n; i++) a[i] = vec[i] - '0';
-		vector<int> v(10);
 		for (int i = 0; i < n; i++) {
 			if (arr[a[i]]) {
 				cout << 1 << endl << a[i] << endl;
 				ok = true;
 				break;
 			}
-			v[a[i]]++;
 		}
 		if (ok)
 			continue;
-		if (n > 4) {
-			cout << 2 << endl;
-			for (int i = 0; i < 10; i++) {
-				if (v[i] > 1) {
-					cout << i << i << endl;
-					break;
+		int k;
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
+				k = a[i] * 10 + a[j];
+				if (comp[k]) {
+					cout <<2 << endl << k << endl, ok = true;
+					break; 
 				}
 			}
-		}
-		else {
-			for (int i = 1; i < pow(2, n); i++) {
-				int p = 0;
-				int c = 0;
-				int j = 0;
-				for (int k = pow(2, n - 1); k > 0; k /= 2) {
-					if (k & i) {
-						p = p * 10 + a[j];
-						c++;
-					}
-					j++;
-				}
-				if (comp[p]) {
-					cout << c << endl << p << endl;
-					ok = true;
-					break;
-				}
-			}
+			if (ok)
+				break;
 		}
 	}
 }
