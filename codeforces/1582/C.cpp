@@ -27,33 +27,56 @@ int main(){
 		int n;
 		string s;
 		cin >> n >> s;
+		char arr[2] = {'*', '*'};
+
+		for (int i = 0; i < n / 2; i++) {
+			if (s[i] != s[n - i - 1]) {
+				arr[0] = s[i];
+				arr[1] = s[n - i - 1];
+				break;
+			}
+		}
+		if (arr[0] == '*') {
+			cout << 0 << endl;
+			continue;
+		}
 		int ans = INT_MAX;
-		for (char ch = 'a'; ch <= 'z'; ch++) {
-			int l = 0, r = n - 1;
-			int k = 0;
-			while (l < r) {
-				if (s[l] != s[r]) {
-					if (s[l] == ch)
-						l++;
-					else if (s[r] == ch)
-						r--;
-					else {
-						k = -1;
-						break;
-					}
-					k++;
-				}
+		int k = 0;
+		int l = 0;
+		int r = n - 1;
+		while (l < r) {
+			if (s[l] != s[r]) {
+				if (s[l] == arr[0])
+					l++, k++;
+				else if (s[r] == arr[0])
+					r--, k++;
 				else {
-					l++, r--;
+					k = -1;
+					break;
 				}
 			}
-			if (k != -1) {
-				ans = min(ans, k);
+			else l++, r--;
+		}
+		if (k != -1)
+			ans = k;
+		l = 0, r = n - 1, k = 0;
+		while (l < r) {
+			if (s[l] != s[r]) {
+				if (s[l] == arr[1])
+					l++, k++;
+				else if (s[r] == arr[1])
+					r--, k++;
+				else {
+					k = -1;
+					break;
+				}
 			}
+			else l++, r--;
 		}
-		if (ans == INT_MAX) {
+		if (k != -1)
+			ans = min(ans, k);
+		if (ans == INT_MAX)
 			cout << -1 << endl;
-		}
 		else cout << ans << endl;
 	}
 }
