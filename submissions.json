@@ -7596,5 +7596,24 @@
       "*1500"
     ],
     "timestamp": "Feb/25/2022 09:50"
+  },
+  "CF159972325": {
+    "contest_id": 1654,
+    "language": "GNU C++17",
+    "path": "codeforces\\1654\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Alice and the Cake",
+    "problem_url": "https://codeforces.com/contest/1654/problem/C",
+    "submission_id": "CF159972325",
+    "submission_url": "https://codeforces.com/contest/1654/submission/159972325",
+    "tags": [
+      "data structures",
+      "greedy",
+      "implementation",
+      "sortings",
+      "*1400"
+    ],
+    "timestamp": "Jun/09/2022 02:17"
   }
 }
